@@ -1,0 +1,310 @@
+/* ==========================================================================
+   KLE Hospital - Premium Grey & Light-White Healthcare Design System
+   ========================================================================== */
+
+:root {
+  /* Primary Slate Grey Palette */
+  --color-slate-950: #090d16;
+  --color-slate-900: #0f172a;
+  --color-slate-850: #162032;
+  --color-slate-800: #1e293b;
+  --color-slate-700: #334155;
+  --color-slate-600: #475569;
+  --color-slate-500: #64748b;
+  --color-slate-400: #94a3b8;
+  --color-slate-300: #cbd5e1;
+  --color-slate-200: #e2e8f0;
+  --color-slate-100: #f1f5f9;
+  --color-slate-50:  #f8fafc;
+  
+  /* Light White / Porcelain Base */
+  --bg-porcelain: #fbfcfd;
+  --bg-pure-white: #ffffff;
+  --bg-soft-card: #ffffff;
+  
+  /* Medical & Accent Highlights (Subtle & Refined) */
+  --accent-cyan: #0284c7;
+  --accent-cyan-light: #e0f2fe;
+  --accent-emerald: #059669;
+  --accent-emerald-light: #d1fae5;
+  --accent-amber: #d97706;
+  --accent-amber-light: #fef3c7;
+  --accent-rose: #e11d48;
+  --accent-rose-light: #ffe4e6;
+  
+  /* Elevation Shadows in Cool Grey */
+  --shadow-subtle: 0 1px 3px rgba(15, 23, 42, 0.05), 0 1px 2px rgba(15, 23, 42, 0.03);
+  --shadow-card: 0 4px 20px -2px rgba(15, 23, 42, 0.06), 0 2px 6px -1px rgba(15, 23, 42, 0.03);
+  --shadow-hover: 0 20px 35px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.05);
+  --shadow-floating: 0 25px 50px -12px rgba(15, 23, 42, 0.18);
+  
+  /* Border Radii */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+  
+  /* Transitions */
+  --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-spring: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Base Setup */
+html {
+  scroll-behavior: smooth;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--color-slate-800);
+  background-color: var(--bg-porcelain);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: var(--bg-porcelain);
+}
+
+/* Typography Enhancements */
+h1, h2, h3, h4, .font-heading {
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Custom Scrollbar in refined grey */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-slate-100);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-slate-400);
+  border-radius: 9999px;
+  border: 2px solid var(--color-slate-100);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-slate-600);
+}
+
+/* Glassmorphism & Surface Styles */
+.glass-header {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  box-shadow: var(--shadow-card);
+}
+
+.glass-card-dark {
+  background: rgba(15, 23, 42, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(51, 65, 85, 0.7);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Soft Grey Gradient Elements */
+.bg-gradient-silver {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%);
+}
+
+.bg-gradient-slate {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+}
+
+.text-gradient-grey {
+  background: linear-gradient(135deg, #0f172a 0%, #475569 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-silver {
+  background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Interactive Card Effects */
+.hover-lift {
+  transition: var(--transition-normal);
+}
+.hover-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Modern Border Highlight Effect */
+.border-subtle {
+  border: 1px solid #e2e8f0;
+}
+.border-highlight-on-hover {
+  transition: var(--transition-fast);
+}
+.border-highlight-on-hover:hover {
+  border-color: #94a3b8;
+}
+
+/* Pulsing Badge for 24/7 Emergency */
+@keyframes pulse-subtle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.08);
+  }
+}
+
+.pulse-badge {
+  animation: pulse-subtle 2s infinite ease-in-out;
+}
+
+/* Badge Glow */
+.emergency-glow {
+  box-shadow: 0 0 15px rgba(225, 29, 72, 0.35);
+}
+
+/* Appointment Wizard Steps */
+.step-indicator {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 0.875rem;
+  transition: var(--transition-fast);
+}
+
+.step-active {
+  background-color: var(--color-slate-900);
+  color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(15, 23, 42, 0.15);
+}
+
+.step-completed {
+  background-color: var(--color-slate-700);
+  color: #ffffff;
+}
+
+.step-inactive {
+  background-color: var(--color-slate-100);
+  color: var(--color-slate-500);
+  border: 1px solid var(--color-slate-300);
+}
+
+/* Time slot pills */
+.slot-pill {
+  transition: var(--transition-fast);
+  cursor: pointer;
+  border: 1px solid var(--color-slate-200);
+  background-color: #ffffff;
+}
+.slot-pill:hover {
+  border-color: var(--color-slate-600);
+  background-color: var(--color-slate-50);
+}
+.slot-pill.selected {
+  background-color: var(--color-slate-900);
+  color: #ffffff;
+  border-color: var(--color-slate-900);
+}
+
+/* Lab Report Specific Print Styles */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #printableReportArea, #printableReportArea * {
+    visibility: visible;
+  }
+  #printableReportArea {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    background: #ffffff !important;
+    box-shadow: none !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* Custom Tabs in Hospital Hero Console */
+.hero-tab-btn {
+  position: relative;
+  transition: var(--transition-fast);
+}
+.hero-tab-btn.active {
+  color: var(--color-slate-900);
+  font-weight: 600;
+}
+.hero-tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-slate-900);
+  border-radius: 9999px;
+}
+
+/* Smooth Accordion */
+details summary::-webkit-details-marker {
+  display: none;
+}
+details > summary {
+  list-style: none;
+}
+details[open] summary .faq-chevron {
+  transform: rotate(180deg);
+}
+
+/* Toast Notifications */
+#toastContainer {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 380px;
+  pointer-events: none;
+}
+
+.toast-item {
+  pointer-events: auto;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.toast-item.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Floating Emergency Action Hub */
+.floating-hub {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 40;
+}

@@ -1,0 +1,1524 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KLE Hospital | Multi-Specialty & Research Institute</title>
+  <meta name="description" content="KLE Hospital is a premier multi-specialty healthcare institution offering advanced tertiary medical care, Da Vinci robotic surgery, 24/7 Level-1 trauma, and compassionate healing." />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+  <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f8fafc',
+              100: '#f1f5f9',
+              200: '#e2e8f0',
+              300: '#cbd5e1',
+              400: '#94a3b8',
+              500: '#64748b',
+              600: '#475569',
+              700: '#334155',
+              800: '#1e293b',
+              900: '#0f172a',
+              950: '#090d16',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            heading: ['"Outfit"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body class="bg-[#fbfcfd] text-slate-800 antialiased selection:bg-slate-800 selection:text-white min-h-screen flex flex-col justify-between">
+
+  <!-- =====================================================================
+       1. Top Emergency & Announcement Bar
+       ===================================================================== -->
+  <div class="bg-slate-900 text-slate-300 text-xs py-2 px-4 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-3">
+      <!-- Left side: Live Emergency Helpline -->
+      <div class="flex items-center gap-4 flex-wrap">
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-rose-500 pulse-badge"></span>
+          <span class="text-slate-400 font-medium">24/7 Emergency Trauma:</span>
+          <a href="tel:+918312473777" class="text-white font-bold hover:text-slate-200 transition font-mono tracking-tight">+91 831 247 3777</a>
+        </div>
+        <div class="hidden sm:flex items-center gap-1.5 text-slate-400">
+          <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-400"></i>
+          <span>JCI & NABH Accredited Tertiary Centre</span>
+        </div>
+      </div>
+
+      <!-- Right side: Quick Links & Language -->
+      <div class="flex items-center gap-4 text-slate-400">
+        <a href="#lab-portal" onclick="openLabPortalModal()" class="hover:text-white transition flex items-center gap-1">
+          <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
+          <span>Download Reports</span>
+        </a>
+        <span class="text-slate-700">|</span>
+        <button onclick="openEmergencyModal()" class="text-rose-400 hover:text-rose-300 font-semibold flex items-center gap-1 transition">
+          <i data-lucide="ambulance" class="w-3.5 h-3.5"></i>
+          <span>Ambulance SOS</span>
+        </button>
+        <span class="text-slate-700 hidden md:inline">|</span>
+        <div class="hidden md:flex items-center gap-1 text-[11px] text-slate-400">
+          <i data-lucide="map-pin" class="w-3 h-3"></i>
+          <span>Belagavi, Karnataka</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       2. Main Navigation Header (Glassmorphic Grey & Light White)
+       ===================================================================== -->
+  <header class="sticky top-0 z-40 glass-header">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-12 h-12 rounded-xl bg-slate-900 text-white flex items-center justify-center font-heading font-extrabold text-2xl shadow-md border border-slate-700 group-hover:scale-105 transition-transform duration-200">
+          KLE
+        </div>
+        <div>
+          <div class="flex items-center gap-1.5">
+            <span class="text-xl font-extrabold tracking-tight text-slate-900 font-heading">KLE Hospital</span>
+            <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-slate-100 text-slate-700 uppercase tracking-wider border border-slate-200">Multi-Specialty</span>
+          </div>
+          <p class="text-[11px] font-medium text-slate-500 tracking-wide">Excellence in Healthcare, Compassion in Healing</p>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-600">
+        <a href="#departments" class="hover:text-slate-950 transition">Specialties</a>
+        <a href="#doctors" class="hover:text-slate-950 transition">Find Doctor</a>
+        <a href="#packages" class="hover:text-slate-950 transition">Health Packages</a>
+        <a href="#facilities" class="hover:text-slate-950 transition">Technology</a>
+        <a href="#insurance" class="hover:text-slate-950 transition">Insurance & TPA</a>
+        <a href="#faq" class="hover:text-slate-950 transition">Patient Care</a>
+        <a href="#contact" class="hover:text-slate-950 transition">Contact</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="hidden sm:flex items-center gap-3">
+        <button onclick="openLabPortalModal()" class="px-3.5 py-2 rounded-xl border border-slate-300 text-slate-700 hover:bg-slate-100 text-xs font-semibold transition flex items-center gap-1.5">
+          <i data-lucide="clipboard-list" class="w-3.5 h-3.5 text-slate-500"></i>
+          <span>Lab Reports</span>
+        </button>
+
+        <button onclick="openAppointmentModal()" class="px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold shadow-sm transition flex items-center gap-2">
+          <i data-lucide="calendar" class="w-3.5 h-3.5"></i>
+          <span>Book Appointment</span>
+        </button>
+      </div>
+
+      <!-- Mobile Menu Trigger -->
+      <button id="mobileMenuBtn" class="lg:hidden p-2 text-slate-700 hover:text-slate-950 focus:outline-none" aria-label="Toggle Navigation">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="mobileNavDrawer" class="fixed inset-0 z-50 bg-slate-950/60 backdrop-blur-sm hidden">
+    <div class="bg-white w-4/5 max-w-sm h-full p-6 shadow-2xl flex flex-col justify-between overflow-y-auto">
+      <div>
+        <div class="flex items-center justify-between pb-4 border-b border-slate-100 mb-6">
+          <div class="flex items-center gap-2">
+            <span class="w-9 h-9 rounded-lg bg-slate-900 text-white flex items-center justify-center font-bold text-lg">KLE</span>
+            <span class="font-bold text-slate-900 font-heading">KLE Hospital</span>
+          </div>
+          <button id="closeMobileMenuBtn" class="p-2 text-slate-400 hover:text-slate-700">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+
+        <nav class="flex flex-col space-y-3 text-sm font-medium text-slate-700">
+          <a href="#departments" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-slate-100">Specialties & Centers</a>
+          <a href="#doctors" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-slate-100">Find a Specialist Doctor</a>
+          <a href="#packages" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-slate-100">Preventive Health Packages</a>
+          <a href="#facilities" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-slate-100">Robotic Surgery & Tech</a>
+          <a href="#health-tool" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-slate-100">BMI & Health Assessment</a>
+          <a href="#insurance" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-slate-100">Cashless Insurance Desk</a>
+          <a href="#contact" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-slate-100">Emergency & Campus Map</a>
+        </nav>
+      </div>
+
+      <div class="pt-6 border-t border-slate-200 space-y-3">
+        <button onclick="openAppointmentModal(); document.getElementById('mobileNavDrawer').classList.add('hidden');" class="w-full py-3 bg-slate-900 text-white rounded-xl text-xs font-semibold">
+          Book Appointment
+        </button>
+        <button onclick="openLabPortalModal(); document.getElementById('mobileNavDrawer').classList.add('hidden');" class="w-full py-3 border border-slate-300 text-slate-800 rounded-xl text-xs font-semibold">
+          Patient Lab Reports
+        </button>
+        <a href="tel:+918312473777" class="w-full py-3 bg-rose-600 text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2">
+          <i data-lucide="phone-call" class="w-4 h-4"></i>
+          <span>Emergency: +91 831 247 3777</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       3. Hero Section with Interactive Healthcare Console
+       ===================================================================== -->
+  <section class="relative overflow-hidden pt-10 pb-16 lg:pt-16 lg:pb-24 border-b border-slate-200/80 bg-gradient-to-b from-slate-50 via-white to-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Hero Text -->
+        <div class="lg:col-span-7">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-xs font-semibold text-slate-700 mb-6 shadow-sm">
+            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            <span>Accredited by NABH & JCI • Established Center of Clinical Excellence</span>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-950 font-heading tracking-tight leading-[1.12] mb-6">
+            Advanced Clinical Care, <br />
+            <span class="text-slate-500">Rooted in Compassion.</span>
+          </h1>
+
+          <p class="text-base sm:text-lg text-slate-600 max-w-2xl font-normal leading-relaxed mb-8">
+            Welcome to <strong class="text-slate-900 font-semibold">KLE Hospital</strong>. With 1,250+ beds, 45+ super specialties, and cutting-edge Da Vinci robotic surgery suites, we deliver world-class medical outcomes for every generation of your family.
+          </p>
+
+          <!-- Quick Action Buttons -->
+          <div class="flex flex-wrap items-center gap-4 mb-10">
+            <button onclick="openAppointmentModal()" class="px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm shadow-md transition flex items-center gap-2.5">
+              <i data-lucide="calendar-plus" class="w-4 h-4"></i>
+              <span>Schedule Consultation</span>
+            </button>
+
+            <a href="#doctors" class="px-5 py-3.5 rounded-xl border border-slate-300 text-slate-700 hover:bg-white text-sm font-semibold transition flex items-center gap-2">
+              <i data-lucide="stethoscope" class="w-4 h-4 text-slate-500"></i>
+              <span>Find a Specialist</span>
+            </a>
+
+            <button onclick="openEmergencyModal()" class="px-4 py-3.5 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 hover:bg-rose-100 text-sm font-bold transition flex items-center gap-2">
+              <i data-lucide="phone-call" class="w-4 h-4 text-rose-600"></i>
+              <span>24/7 Trauma SOS</span>
+            </button>
+          </div>
+
+          <!-- Trust Indicators / Micro stats -->
+          <div class="grid grid-cols-3 gap-4 pt-8 border-t border-slate-200/80 max-w-lg">
+            <div>
+              <div class="text-2xl sm:text-3xl font-extrabold text-slate-900 font-heading">1,250+</div>
+              <div class="text-xs text-slate-500 font-medium">Inpatient Beds</div>
+            </div>
+            <div>
+              <div class="text-2xl sm:text-3xl font-extrabold text-slate-900 font-heading">350+</div>
+              <div class="text-xs text-slate-500 font-medium">Super Specialists</div>
+            </div>
+            <div>
+              <div class="text-2xl sm:text-3xl font-extrabold text-slate-900 font-heading">99.4%</div>
+              <div class="text-xs text-slate-500 font-medium">Recovery Rating</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Interactive Console (Grey & Light White Card) -->
+        <div class="lg:col-span-5">
+          <div class="glass-card rounded-3xl p-6 sm:p-7 shadow-xl border border-slate-200">
+            
+            <div class="flex items-center justify-between mb-5 pb-3 border-b border-slate-100">
+              <div class="flex items-center gap-2">
+                <i data-lucide="sparkles" class="w-4 h-4 text-slate-700"></i>
+                <span class="text-xs font-bold text-slate-900 uppercase tracking-wider">Patient Self-Service Hub</span>
+              </div>
+              <span class="text-[10px] text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full font-bold border border-emerald-200 flex items-center gap-1">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Live Portal
+              </span>
+            </div>
+
+            <!-- Console Tabs -->
+            <div class="flex border-b border-slate-200 mb-5 text-xs">
+              <button data-tab="heroTabDoctors" class="hero-tab-btn pb-3 px-3 active font-semibold text-slate-900 border-b-2 border-slate-900">
+                Search Doctor
+              </button>
+              <button data-tab="heroTabReports" class="hero-tab-btn pb-3 px-3 text-slate-500 hover:text-slate-900">
+                Lab Reports
+              </button>
+              <button data-tab="heroTabAmbulance" class="hero-tab-btn pb-3 px-3 text-slate-500 hover:text-slate-900">
+                Ambulance Dispatch
+              </button>
+            </div>
+
+            <!-- Panel 1: Fast Doctor Search -->
+            <div id="heroTabDoctors" class="hero-tab-panel">
+              <p class="text-xs text-slate-500 mb-4">Quickly lookup clinical super-specialists across 45+ departments:</p>
+              
+              <div class="space-y-3 mb-5">
+                <div>
+                  <label class="block text-[11px] font-bold text-slate-600 uppercase mb-1">Select Specialty</label>
+                  <select onchange="filterAndScrollToDoctors(this.value)" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-900">
+                    <option value="all">All Departments (350+ Doctors)</option>
+                    <option value="cardiology">Cardiology & Cardiac Surgery</option>
+                    <option value="neurology">Neurology & Neurosurgery</option>
+                    <option value="oncology">Comprehensive Cancer Care</option>
+                    <option value="orthopedics">Orthopedics & Joint Replacement</option>
+                    <option value="pediatrics">Pediatrics & Level III NICU</option>
+                    <option value="gastroenterology">Gastroenterology & Hepatology</option>
+                    <option value="nephrology">Nephrology & Kidney Care</option>
+                    <option value="emergency">24/7 Level-1 Trauma Care</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label class="block text-[11px] font-bold text-slate-600 uppercase mb-1">Doctor Name or Keyword</label>
+                  <div class="relative">
+                    <input type="text" id="heroQuickDocSearch" placeholder="e.g. Patil, Deshpande, Heart..." class="w-full bg-slate-50 border border-slate-300 rounded-xl pl-9 pr-3 py-2.5 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-900" />
+                    <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3 top-3"></i>
+                  </div>
+                </div>
+              </div>
+
+              <button onclick="const q = document.getElementById('heroQuickDocSearch').value; document.getElementById('doctors').scrollIntoView({behavior:'smooth'}); const s = document.getElementById('doctorSearchInput'); if(s) { s.value = q; s.dispatchEvent(new Event('input')); }" class="w-full py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold shadow-sm transition flex items-center justify-center gap-2">
+                <span>View Matching Specialists</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+
+            <!-- Panel 2: Quick Lab Report Lookup -->
+            <div id="heroTabReports" class="hero-tab-panel hidden">
+              <p class="text-xs text-slate-500 mb-4">Enter your unique Patient ID or test sample token to view verified diagnostic findings:</p>
+              
+              <div class="mb-4">
+                <label class="block text-[11px] font-bold text-slate-600 uppercase mb-1">Patient ID / Token</label>
+                <div class="relative">
+                  <input type="text" id="heroPatientIdInput" placeholder="e.g. KLE-1001" class="w-full bg-slate-50 border border-slate-300 rounded-xl pl-9 pr-3 py-2.5 text-xs font-mono text-slate-800 uppercase focus:outline-none focus:ring-2 focus:ring-slate-900" />
+                  <i data-lucide="file-badge" class="w-4 h-4 text-slate-400 absolute left-3 top-3"></i>
+                </div>
+              </div>
+
+              <div class="mb-5">
+                <span class="text-[10px] uppercase font-bold text-slate-400 block mb-1.5">Try demo sample files:</span>
+                <div class="flex flex-wrap gap-1.5">
+                  <button type="button" onclick="openLabPortalModal('KLE-1001')" class="px-2 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded text-[11px] font-mono font-medium transition">KLE-1001 (Lipid)</button>
+                  <button type="button" onclick="openLabPortalModal('KLE-1002')" class="px-2 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded text-[11px] font-mono font-medium transition">KLE-1002 (Thyroid)</button>
+                  <button type="button" onclick="openLabPortalModal('KLE-1003')" class="px-2 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded text-[11px] font-mono font-medium transition">KLE-1003 (Renal)</button>
+                </div>
+              </div>
+
+              <button onclick="const id = document.getElementById('heroPatientIdInput').value || 'KLE-1001'; openLabPortalModal(id);" class="w-full py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold shadow-sm transition flex items-center justify-center gap-2">
+                <span>View & Print Lab Report</span>
+                <i data-lucide="file-check" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+
+            <!-- Panel 3: Ambulance Emergency Dispatch -->
+            <div id="heroTabAmbulance" class="hero-tab-panel hidden">
+              <div class="p-3 bg-rose-50 border border-rose-200 rounded-xl text-rose-800 text-xs mb-4 flex items-center gap-2">
+                <i data-lucide="alert-circle" class="w-4 h-4 text-rose-600 shrink-0"></i>
+                <span>Direct Mobile ICU Telemetry with on-board ACLS doctors</span>
+              </div>
+
+              <div class="space-y-3 mb-4">
+                <div>
+                  <label class="block text-[11px] font-bold text-slate-600 uppercase mb-1">Pickup Landmark / Address</label>
+                  <input type="text" id="heroAmbulanceLoc" placeholder="e.g. Tilakwadi, Belagavi / NH-4 Toll Plaza" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3 py-2 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-rose-600" />
+                </div>
+              </div>
+
+              <button onclick="openEmergencyModal()" class="w-full py-3 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold shadow-md transition flex items-center justify-center gap-2">
+                <i data-lucide="phone-call" class="w-4 h-4"></i>
+                <span>Call Emergency Hotline Now</span>
+              </button>
+            </div>
+
+            <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-400">
+              <span>Encrypted 256-Bit Patient Portal</span>
+              <a href="#faq" class="text-slate-600 hover:underline">Hospital Helpdesk</a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       4. Centers of Excellence & Departments Showcase
+       ===================================================================== -->
+  <section id="departments" class="py-16 sm:py-24 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div>
+          <div class="inline-block px-3 py-1 bg-slate-100 text-slate-700 text-xs font-bold rounded-full uppercase tracking-wider mb-2">
+            Clinical Institutes
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 font-heading">
+            Centers of Medical Excellence
+          </h2>
+          <p class="text-sm text-slate-500 mt-2 max-w-xl">
+            World-class multi-disciplinary medical departments equipped with advanced infrastructure and led by globally accredited super-specialists.
+          </p>
+        </div>
+
+        <div class="mt-4 md:mt-0 flex gap-2">
+          <a href="#doctors" class="text-xs font-bold text-slate-900 hover:text-slate-700 flex items-center gap-1.5 py-2 px-3.5 bg-slate-100 rounded-lg hover:bg-slate-200 transition">
+            <span>Browse All 350+ Specialists</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Departments Grid (dynamically loaded via js/data.js) -->
+      <div id="departmentsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Rendered via JS -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       5. Interactive "Find a Specialist Doctor" Section
+       ===================================================================== -->
+  <section id="doctors" class="py-16 sm:py-24 bg-slate-50 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <div class="inline-block px-3 py-1 bg-slate-200 text-slate-800 text-xs font-bold rounded-full uppercase tracking-wider mb-2">
+          Specialist Directory
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 font-heading">
+          Meet Our Distinguished Doctors
+        </h2>
+        <p class="text-sm text-slate-600 mt-2">
+          Consult with internationally trained doctors, surgeons, and physicians dedicated to evidence-based healing.
+        </p>
+      </div>
+
+      <!-- Filter Controls & Search -->
+      <div class="glass-card rounded-2xl p-4 mb-8 border border-slate-200 shadow-sm flex flex-col md:flex-row gap-4 items-center justify-between">
+        <!-- Specialty Filters -->
+        <div class="flex items-center gap-2 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 scrollbar-none">
+          <button data-dept="all" class="doc-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-bold bg-slate-900 text-white whitespace-nowrap transition">
+            All Doctors
+          </button>
+          <button data-dept="cardiology" class="doc-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-medium bg-white text-slate-700 border border-slate-200 hover:bg-slate-100 whitespace-nowrap transition">
+            Cardiology
+          </button>
+          <button data-dept="neurology" class="doc-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-medium bg-white text-slate-700 border border-slate-200 hover:bg-slate-100 whitespace-nowrap transition">
+            Neurology
+          </button>
+          <button data-dept="oncology" class="doc-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-medium bg-white text-slate-700 border border-slate-200 hover:bg-slate-100 whitespace-nowrap transition">
+            Oncology
+          </button>
+          <button data-dept="orthopedics" class="doc-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-medium bg-white text-slate-700 border border-slate-200 hover:bg-slate-100 whitespace-nowrap transition">
+            Orthopedics
+          </button>
+          <button data-dept="pediatrics" class="doc-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-medium bg-white text-slate-700 border border-slate-200 hover:bg-slate-100 whitespace-nowrap transition">
+            Pediatrics
+          </button>
+          <button data-dept="gastroenterology" class="doc-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-medium bg-white text-slate-700 border border-slate-200 hover:bg-slate-100 whitespace-nowrap transition">
+            Gastroenterology
+          </button>
+        </div>
+
+        <!-- Search Bar & Counter -->
+        <div class="flex items-center gap-3 w-full md:w-auto">
+          <div class="relative w-full md:w-64">
+            <input type="text" id="doctorSearchInput" placeholder="Search doctor by name..." class="w-full bg-slate-50 border border-slate-300 rounded-xl pl-9 pr-3 py-1.5 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-900" />
+            <i data-lucide="search" class="w-3.5 h-3.5 text-slate-400 absolute left-3 top-2.5"></i>
+          </div>
+          <span id="doctorCountBadge" class="hidden sm:inline-block text-xs font-semibold text-slate-500 whitespace-nowrap"></span>
+        </div>
+      </div>
+
+      <!-- Doctors Card Grid -->
+      <div id="doctorsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Injected via JavaScript -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       6. Diagnostic Lab Reports & Patient Portal Section
+       ===================================================================== -->
+  <section id="lab-portal" class="py-16 sm:py-24 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <!-- Left Banner Description -->
+        <div class="lg:col-span-5">
+          <div class="inline-block px-3 py-1 bg-slate-100 text-slate-700 text-xs font-bold rounded-full uppercase tracking-wider mb-2">
+            NABL Accredited Diagnostics
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 font-heading mb-4">
+            Instant Access to Diagnostic Lab Reports
+          </h2>
+          <p class="text-sm text-slate-600 leading-relaxed mb-6">
+            KLE Hospital’s central molecular and pathology laboratory is equipped with automated bi-directional analyzers. View, print, or download your verified medical reports instantly from any device.
+          </p>
+
+          <div class="space-y-3 mb-8">
+            <div class="flex items-center gap-3 text-xs font-medium text-slate-700">
+              <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0">
+                <i data-lucide="check" class="w-3.5 h-3.5"></i>
+              </div>
+              <span>Digital verification by Chief Pathologist & Biochemist</span>
+            </div>
+            <div class="flex items-center gap-3 text-xs font-medium text-slate-700">
+              <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0">
+                <i data-lucide="check" class="w-3.5 h-3.5"></i>
+              </div>
+              <span>QR code authenticity token on all printed reports</span>
+            </div>
+            <div class="flex items-center gap-3 text-xs font-medium text-slate-700">
+              <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0">
+                <i data-lucide="check" class="w-3.5 h-3.5"></i>
+              </div>
+              <span>Historical trend tracking for chronic conditions</span>
+            </div>
+          </div>
+
+          <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200">
+            <div class="text-xs font-bold text-slate-800 mb-1">Test Demo Patient IDs:</div>
+            <p class="text-[11px] text-slate-500 mb-3">Click any token to instantly preview a sample clinical lab report:</p>
+            <div class="flex flex-wrap gap-2">
+              <button class="sample-report-chip px-3 py-1 bg-white hover:bg-slate-900 hover:text-white border border-slate-300 rounded-lg text-xs font-mono font-medium transition" data-id="KLE-1001">KLE-1001 (Ramesh Patil)</button>
+              <button class="sample-report-chip px-3 py-1 bg-white hover:bg-slate-900 hover:text-white border border-slate-300 rounded-lg text-xs font-mono font-medium transition" data-id="KLE-1002">KLE-1002 (Ananya Sharma)</button>
+              <button class="sample-report-chip px-3 py-1 bg-white hover:bg-slate-900 hover:text-white border border-slate-300 rounded-lg text-xs font-mono font-medium transition" data-id="KLE-1003">KLE-1003 (David Miller)</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Lookup Box -->
+        <div class="lg:col-span-7">
+          <div class="glass-card rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-lg">
+            <h3 class="text-lg font-bold text-slate-900 font-heading mb-2">Patient Diagnostic Portal</h3>
+            <p class="text-xs text-slate-500 mb-5">Enter your Patient ID (e.g. KLE-1001) or registered mobile number:</p>
+
+            <div class="flex flex-col sm:flex-row gap-3 mb-6">
+              <div class="relative flex-1">
+                <input type="text" id="patientIdReportInput" placeholder="Enter Patient ID (e.g. KLE-1001)" class="w-full bg-slate-50 border border-slate-300 rounded-xl pl-10 pr-3 py-3 text-xs font-mono font-semibold uppercase text-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-900" />
+                <i data-lucide="fingerprint" class="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5"></i>
+              </div>
+              <button id="lookupReportBtn" class="py-3 px-6 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs shadow-sm transition flex items-center justify-center gap-2">
+                <i data-lucide="search" class="w-4 h-4"></i>
+                <span>Fetch Report</span>
+              </button>
+            </div>
+
+            <!-- Dynamic Result Area -->
+            <div id="labReportResultContainer">
+              <div class="text-center py-12 bg-slate-50 rounded-2xl border-2 border-dashed border-slate-200">
+                <i data-lucide="file-text" class="w-10 h-10 text-slate-300 mx-auto mb-2"></i>
+                <p class="text-xs font-semibold text-slate-600">No report loaded yet</p>
+                <p class="text-[11px] text-slate-400 mt-1">Select one of the sample chips on the left or enter your ID above.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       7. Preventive Health Checkup Packages
+       ===================================================================== -->
+  <section id="packages" class="py-16 sm:py-24 bg-slate-50 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <div class="inline-block px-3 py-1 bg-slate-200 text-slate-800 text-xs font-bold rounded-full uppercase tracking-wider mb-2">
+          Preventive Medicine
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 font-heading">
+          Comprehensive Health Checkup Packages
+        </h2>
+        <p class="text-sm text-slate-600 mt-2">
+          Early detection is the key to longevity. Tailored wellness screenings for individuals, executives, and senior citizens.
+        </p>
+      </div>
+
+      <!-- Packages Grid -->
+      <div id="packagesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Rendered via js/data.js -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       8. Advanced Medical Infrastructure & Technology
+       ===================================================================== -->
+  <section id="facilities" class="py-16 sm:py-24 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="max-w-3xl mb-12">
+        <div class="inline-block px-3 py-1 bg-slate-100 text-slate-700 text-xs font-bold rounded-full uppercase tracking-wider mb-2">
+          Next-Generation Infrastructure
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 font-heading">
+          Cutting-Edge Medical Technology
+        </h2>
+        <p class="text-sm text-slate-500 mt-2">
+          Empowering our clinical team with modern diagnostic and surgical robotics to ensure minimal invasiveness and expedited recovery.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Tech 1 -->
+        <div class="glass-card rounded-2xl p-6 hover-lift border-highlight-on-hover">
+          <div class="w-12 h-12 rounded-xl bg-slate-900 text-white flex items-center justify-center mb-4">
+            <i data-lucide="cpu" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 font-heading mb-2">Da Vinci Xi 4th Gen Robotic Surgery</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Multi-quadrant robotic precision with 3D high-definition vision and wristed instruments for cardiac, oncology, and urology procedures.
+          </p>
+        </div>
+
+        <!-- Tech 2 -->
+        <div class="glass-card rounded-2xl p-6 hover-lift border-highlight-on-hover">
+          <div class="w-12 h-12 rounded-xl bg-slate-900 text-white flex items-center justify-center mb-4">
+            <i data-lucide="scan" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 font-heading mb-2">3.0 Tesla Digital MRI & 128-Slice CT</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Ultra-high resolution neuro and vascular imaging with reduced scan duration and maximum patient comfort.
+          </p>
+        </div>
+
+        <!-- Tech 3 -->
+        <div class="glass-card rounded-2xl p-6 hover-lift border-highlight-on-hover">
+          <div class="w-12 h-12 rounded-xl bg-slate-900 text-white flex items-center justify-center mb-4">
+            <i data-lucide="shield-check" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 font-heading mb-2">12 Modular Laminar Airflow OTs</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Equipped with ultra-pure Class-100 HEPA air sterilization, minimizing post-operative infection rates to near zero.
+          </p>
+        </div>
+
+        <!-- Tech 4 -->
+        <div class="glass-card rounded-2xl p-6 hover-lift border-highlight-on-hover">
+          <div class="w-12 h-12 rounded-xl bg-slate-900 text-white flex items-center justify-center mb-4">
+            <i data-lucide="truck" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 font-heading mb-2">Level-1 Trauma & Mobile ICU Fleet</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            GPS-integrated Advanced Life Support (ALS) ambulances equipped with mechanical ventilators, defibrillators, and direct hospital telemetry.
+          </p>
+        </div>
+
+        <!-- Tech 5 -->
+        <div class="glass-card rounded-2xl p-6 hover-lift border-highlight-on-hover">
+          <div class="w-12 h-12 rounded-xl bg-slate-900 text-white flex items-center justify-center mb-4">
+            <i data-lucide="droplets" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 font-heading mb-2">24/7 Apheresis & Blood Component Bank</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            State-certified leukodepleted blood products, single-donor platelet pheresis, and emergency component separation facility.
+          </p>
+        </div>
+
+        <!-- Tech 6 -->
+        <div class="glass-card rounded-2xl p-6 hover-lift border-highlight-on-hover">
+          <div class="w-12 h-12 rounded-xl bg-slate-900 text-white flex items-center justify-center mb-4">
+            <i data-lucide="leaf" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 font-heading mb-2">Green Hospital & Digital EHR</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Solar-powered sustainable medical campus, zero-paper electronic health records, and clinical waste treatment plants.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       9. Interactive Health Assessment Tools (BMI & Health Calculator)
+       ===================================================================== -->
+  <section id="health-tool" class="py-16 sm:py-24 bg-slate-50 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <!-- Explanation -->
+        <div class="lg:col-span-6">
+          <div class="inline-block px-3 py-1 bg-slate-200 text-slate-800 text-xs font-bold rounded-full uppercase tracking-wider mb-2">
+            Interactive Health Tools
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 font-heading mb-4">
+            Body Mass Index & Metabolic Health Screener
+          </h2>
+          <p class="text-sm text-slate-600 leading-relaxed mb-6">
+            Understanding your body metrics is the first step toward preventing cardiovascular strain, diabetes, and joint degradation. Calculate your score to receive immediate clinical advice from our preventive medicine desk.
+          </p>
+
+          <div class="grid grid-cols-2 gap-4 text-xs text-slate-600">
+            <div class="p-4 bg-white rounded-xl border border-slate-200">
+              <span class="font-bold text-slate-900 block mb-1">Standard BMI Ranges:</span>
+              <ul class="space-y-1 text-slate-500">
+                <li>• Underweight: &lt; 18.5</li>
+                <li>• Normal / Ideal: 18.5 – 24.9</li>
+                <li>• Overweight: 25.0 – 29.9</li>
+                <li>• Obese: &ge; 30.0</li>
+              </ul>
+            </div>
+            <div class="p-4 bg-white rounded-xl border border-slate-200">
+              <span class="font-bold text-slate-900 block mb-1">Clinical Follow-up:</span>
+              <p class="text-slate-500 leading-relaxed">
+                Our in-house clinical nutritionists and cardiologists offer customized diet & lifestyle intervention programs.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Calculator Card -->
+        <div class="lg:col-span-6">
+          <div class="glass-card rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-md">
+            <h3 class="text-base font-bold text-slate-900 font-heading mb-4">Calculate Your Health Indicator</h3>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+              <div>
+                <label class="block text-[11px] font-bold text-slate-600 uppercase mb-1">Height (cm)</label>
+                <input type="number" id="calcHeight" placeholder="e.g. 175" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3 py-2.5 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-900" />
+              </div>
+              <div>
+                <label class="block text-[11px] font-bold text-slate-600 uppercase mb-1">Weight (kg)</label>
+                <input type="number" id="calcWeight" placeholder="e.g. 70" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3 py-2.5 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-900" />
+              </div>
+              <div>
+                <label class="block text-[11px] font-bold text-slate-600 uppercase mb-1">Age (Years)</label>
+                <input type="number" id="calcAge" placeholder="e.g. 35" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3 py-2.5 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-900" />
+              </div>
+            </div>
+
+            <button id="calculateBmiBtn" class="w-full py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs transition shadow-sm flex items-center justify-center gap-2 mb-4">
+              <i data-lucide="calculator" class="w-4 h-4"></i>
+              <span>Evaluate Clinical Score</span>
+            </button>
+
+            <!-- Dynamic Result -->
+            <div id="bmiResultCard" class="hidden"></div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       10. 24/7 Rapid Ambulance Request & Emergency Protocol
+       ===================================================================== -->
+  <section class="py-16 sm:py-20 bg-slate-900 text-white border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <div class="lg:col-span-7">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-950/80 border border-rose-800 text-rose-300 text-xs font-bold uppercase tracking-wider mb-4">
+            <span class="w-2 h-2 rounded-full bg-rose-500 pulse-badge"></span>
+            <span>24/7 Rapid Emergency Response</span>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-heading tracking-tight mb-4">
+            Level-1 Trauma & Mobile ICU Ambulance Fleet
+          </h2>
+
+          <p class="text-sm text-slate-300 leading-relaxed mb-6">
+            In medical emergencies, every minute counts. KLE Hospital operates a dedicated fleet of GPS-equipped Advanced Life Support (ALS) ambulances stationed across strategic arterial points in the city. Door-to-doctor clinical protocol is initiated while en route.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+            <div class="p-4 rounded-xl bg-slate-800/80 border border-slate-700">
+              <div class="text-rose-400 font-bold mb-1 flex items-center gap-1.5">
+                <i data-lucide="phone-call" class="w-4 h-4"></i>
+                <span>Direct Emergency Desk</span>
+              </div>
+              <a href="tel:+918312473777" class="text-xl font-bold font-mono text-white hover:text-slate-200">+91 831 247 3777</a>
+              <p class="text-slate-400 text-[11px] mt-1">Zero-delay immediate triage line</p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-800/80 border border-slate-700">
+              <div class="text-slate-300 font-bold mb-1 flex items-center gap-1.5">
+                <i data-lucide="droplet" class="w-4 h-4 text-rose-500"></i>
+                <span>24/7 Blood Bank Hotline</span>
+              </div>
+              <a href="tel:+918312479999" class="text-xl font-bold font-mono text-white hover:text-slate-200">+91 831 247 9999</a>
+              <p class="text-slate-400 text-[11px] mt-1">Platelets, plasma, whole blood</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ambulance Dispatch Simulator Console -->
+        <div class="lg:col-span-5">
+          <div class="bg-slate-800/90 rounded-3xl p-6 sm:p-7 border border-slate-700 shadow-2xl">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-base font-bold text-white font-heading">Request Emergency Ambulance</h3>
+              <span class="text-[10px] font-bold text-rose-400 uppercase tracking-wider bg-rose-950/60 px-2.5 py-1 rounded-md border border-rose-800">Priority 1</span>
+            </div>
+
+            <div class="space-y-3 mb-4">
+              <div>
+                <label class="block text-[11px] font-bold text-slate-300 uppercase mb-1">Your Exact Location / Area</label>
+                <input type="text" id="ambulanceLocationInput" placeholder="e.g. Nehru Nagar, Belagavi" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-rose-500" />
+              </div>
+
+              <div>
+                <label class="block text-[11px] font-bold text-slate-300 uppercase mb-1">Nature of Emergency</label>
+                <select id="ambulanceTypeSelect" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2.5 text-xs text-white focus:outline-none focus:ring-2 focus:ring-rose-500">
+                  <option value="Cardiac & Chest Pain">Cardiac Emergency / Chest Pain</option>
+                  <option value="Road Accident & Trauma">Road Traffic Accident / Trauma</option>
+                  <option value="Acute Stroke Symptoms">Acute Stroke (Face drop, Arm weakness)</option>
+                  <option value="Severe Breathlessness">Respiratory Distress / Asthma</option>
+                  <option value="Maternal Emergency">Labor & Maternal Emergency</option>
+                  <option value="General Critical">Other Critical Emergency</option>
+                </select>
+              </div>
+            </div>
+
+            <button id="requestAmbulanceBtn" class="w-full py-3 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-bold text-xs shadow-lg transition flex items-center justify-center gap-2">
+              <i data-lucide="siren" class="w-4 h-4"></i>
+              <span>Dispatch Nearest ALS Ambulance</span>
+            </button>
+
+            <!-- Status Container -->
+            <div id="ambulanceStatusContainer" class="mt-4 hidden"></div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       11. Cashless Insurance & TPA Network
+       ===================================================================== -->
+  <section id="insurance" class="py-16 sm:py-24 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <div class="inline-block px-3 py-1 bg-slate-100 text-slate-700 text-xs font-bold rounded-full uppercase tracking-wider mb-2">
+          Hassle-Free Care
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 font-heading">
+          Cashless Insurance & TPA Desk
+        </h2>
+        <p class="text-sm text-slate-500 mt-2">
+          KLE Hospital is empanelled with all leading health insurance companies and third-party administrators (TPAs) for cashless admission and treatment.
+        </p>
+      </div>
+
+      <!-- Partner Logos/Pills -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 mb-10">
+        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-center font-bold text-xs text-slate-800 flex items-center justify-center shadow-sm">
+          Star Health
+        </div>
+        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-center font-bold text-xs text-slate-800 flex items-center justify-center shadow-sm">
+          HDFC ERGO
+        </div>
+        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-center font-bold text-xs text-slate-800 flex items-center justify-center shadow-sm">
+          ICICI Lombard
+        </div>
+        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-center font-bold text-xs text-slate-800 flex items-center justify-center shadow-sm">
+          Niva Bupa
+        </div>
+        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-center font-bold text-xs text-slate-800 flex items-center justify-center shadow-sm">
+          Care Health
+        </div>
+        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-center font-bold text-xs text-slate-800 flex items-center justify-center shadow-sm">
+          Medi Assist TPA
+        </div>
+        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-center font-bold text-xs text-slate-800 flex items-center justify-center shadow-sm">
+          Paramount TPA
+        </div>
+        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-center font-bold text-xs text-slate-800 flex items-center justify-center shadow-sm">
+          Raksha TPA
+        </div>
+        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-center font-bold text-xs text-slate-800 flex items-center justify-center shadow-sm">
+          Vipul Medcorp
+        </div>
+        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-center font-bold text-xs text-slate-800 flex items-center justify-center shadow-sm">
+          Heritage Health
+        </div>
+        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-center font-bold text-xs text-slate-800 flex items-center justify-center shadow-sm">
+          Ayushman Bharat (PM-JAY)
+        </div>
+        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-center font-bold text-xs text-slate-800 flex items-center justify-center shadow-sm">
+          CGHS & ECHS Approved
+        </div>
+      </div>
+
+      <!-- Cashless Process Flow -->
+      <div class="glass-card rounded-2xl p-6 sm:p-8 border border-slate-200">
+        <h3 class="text-base font-bold text-slate-900 font-heading mb-4 text-center">4-Step Seamless Cashless Hospitalization Process</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-xs">
+          <div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
+            <span class="w-7 h-7 rounded-full bg-slate-900 text-white flex items-center justify-center font-bold mb-2">1</span>
+            <h4 class="font-bold text-slate-900 mb-1">Present Documents</h4>
+            <p class="text-slate-500">Submit your insurance e-card and government ID at the TPA desk.</p>
+          </div>
+          <div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
+            <span class="w-7 h-7 rounded-full bg-slate-900 text-white flex items-center justify-center font-bold mb-2">2</span>
+            <h4 class="font-bold text-slate-900 mb-1">Pre-Authorization</h4>
+            <p class="text-slate-500">Our desk transmits clinical pre-auth documents to your insurer within 2 hours.</p>
+          </div>
+          <div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
+            <span class="w-7 h-7 rounded-full bg-slate-900 text-white flex items-center justify-center font-bold mb-2">3</span>
+            <h4 class="font-bold text-slate-900 mb-1">Approval & Care</h4>
+            <p class="text-slate-500">Initial sanction received; patient undergoes treatment without out-of-pocket stress.</p>
+          </div>
+          <div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
+            <span class="w-7 h-7 rounded-full bg-slate-900 text-white flex items-center justify-center font-bold mb-2">4</span>
+            <h4 class="font-bold text-slate-900 mb-1">Smooth Discharge</h4>
+            <p class="text-slate-500">Final bill settled directly by the insurance provider upon discharge.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       12. Verified Patient Stories & Testimonials
+       ===================================================================== -->
+  <section class="py-16 sm:py-24 bg-slate-50 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <div class="inline-block px-3 py-1 bg-slate-200 text-slate-800 text-xs font-bold rounded-full uppercase tracking-wider mb-2">
+          Patient Stories
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 font-heading">
+          Stories of Hope, Healing & Recovery
+        </h2>
+        <p class="text-sm text-slate-600 mt-2">
+          Hear directly from individuals and families whose lives have been transformed through our medical care.
+        </p>
+      </div>
+
+      <!-- Testimonials Grid -->
+      <div id="testimonialsGrid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Injected via js/data.js -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       13. Frequently Asked Questions (FAQ) Accordion
+       ===================================================================== -->
+  <section id="faq" class="py-16 sm:py-24 bg-white border-b border-slate-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-12">
+        <div class="inline-block px-3 py-1 bg-slate-100 text-slate-700 text-xs font-bold rounded-full uppercase tracking-wider mb-2">
+          Help & Guidance
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 font-heading">
+          Frequently Asked Questions
+        </h2>
+        <p class="text-sm text-slate-500 mt-2">
+          Common queries regarding OPD consultations, emergency admissions, insurance, and reports.
+        </p>
+      </div>
+
+      <div class="space-y-4 text-xs sm:text-sm">
+        <details class="group glass-card rounded-2xl p-5 border border-slate-200 cursor-pointer">
+          <summary class="flex justify-between items-center font-bold text-slate-900 list-none">
+            <span>How can I book an appointment with a specialist doctor at KLE Hospital?</span>
+            <i data-lucide="chevron-down" class="faq-chevron w-4 h-4 text-slate-500 transition-transform duration-200"></i>
+          </summary>
+          <p class="mt-3 text-slate-600 leading-relaxed pt-3 border-t border-slate-100">
+            You can book directly through our online appointment system on this website, call our central appointment desk at +91 831 247 1000, or walk in directly to our outpatient registration desks between 8:00 AM and 8:00 PM.
+          </p>
+        </details>
+
+        <details class="group glass-card rounded-2xl p-5 border border-slate-200 cursor-pointer">
+          <summary class="flex justify-between items-center font-bold text-slate-900 list-none">
+            <span>Is emergency trauma care and ambulance assistance available 24/7?</span>
+            <i data-lucide="chevron-down" class="faq-chevron w-4 h-4 text-slate-500 transition-transform duration-200"></i>
+          </summary>
+          <p class="mt-3 text-slate-600 leading-relaxed pt-3 border-t border-slate-100">
+            Yes, our Level-1 Trauma Centre and Advanced Life Support (ALS) Mobile ICU ambulances operate round-the-clock, 365 days a year. Call our direct Emergency Hotline at +91 831 247 3777 or +91 831 247 9999 for instant response.
+          </p>
+        </details>
+
+        <details class="group glass-card rounded-2xl p-5 border border-slate-200 cursor-pointer">
+          <summary class="flex justify-between items-center font-bold text-slate-900 list-none">
+            <span>How does cashless insurance hospitalization work at KLE Hospital?</span>
+            <i data-lucide="chevron-down" class="faq-chevron w-4 h-4 text-slate-500 transition-transform duration-200"></i>
+          </summary>
+          <p class="mt-3 text-slate-600 leading-relaxed pt-3 border-t border-slate-100">
+            Our dedicated 24/7 TPA & Insurance Desk is located on the ground floor. Present your health insurance card, government ID, and policy number. Our team coordinates pre-authorization with over 40+ insurance companies and TPAs for a cashless admission.
+          </p>
+        </details>
+
+        <details class="group glass-card rounded-2xl p-5 border border-slate-200 cursor-pointer">
+          <summary class="flex justify-between items-center font-bold text-slate-900 list-none">
+            <span>Can I view and download my laboratory reports online?</span>
+            <i data-lucide="chevron-down" class="faq-chevron w-4 h-4 text-slate-500 transition-transform duration-200"></i>
+          </summary>
+          <p class="mt-3 text-slate-600 leading-relaxed pt-3 border-t border-slate-100">
+            Yes! Use our 'Patient Portal / Lab Reports' feature on this website. Enter your unique Patient ID (e.g. KLE-1001) or registered mobile number to immediately view, print, or download your verified diagnostic reports.
+          </p>
+        </details>
+
+        <details class="group glass-card rounded-2xl p-5 border border-slate-200 cursor-pointer">
+          <summary class="flex justify-between items-center font-bold text-slate-900 list-none">
+            <span>What are the visiting hours for inpatients and intensive care units?</span>
+            <i data-lucide="chevron-down" class="faq-chevron w-4 h-4 text-slate-500 transition-transform duration-200"></i>
+          </summary>
+          <p class="mt-3 text-slate-600 leading-relaxed pt-3 border-t border-slate-100">
+            General Wards: 04:30 PM - 07:00 PM daily. ICUs & Critical Care Units: 11:00 AM - 12:00 PM & 05:00 PM - 06:00 PM (restricted to 1 attendee at a time with sanitization protocols).
+          </p>
+        </details>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       14. Campus Location, Directions & Contact Desk
+       ===================================================================== -->
+  <section id="contact" class="py-16 sm:py-24 bg-slate-50 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+        <!-- Campus Info -->
+        <div class="lg:col-span-5">
+          <div class="inline-block px-3 py-1 bg-slate-200 text-slate-800 text-xs font-bold rounded-full uppercase tracking-wider mb-2">
+            Campus & Reachability
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 font-heading mb-4">
+            Visit KLE Hospital Campus
+          </h2>
+          <p class="text-sm text-slate-600 leading-relaxed mb-6">
+            Located conveniently on the National Highway-4 corridor in Belagavi with dedicated multi-level parking, helipad, and seamless ambulance access ramps.
+          </p>
+
+          <div class="space-y-4 text-xs text-slate-700 mb-8">
+            <div class="flex items-start gap-3 p-3.5 bg-white rounded-xl border border-slate-200">
+              <i data-lucide="map-pin" class="w-5 h-5 text-slate-900 shrink-0 mt-0.5"></i>
+              <div>
+                <span class="font-bold text-slate-900 block">Campus Address</span>
+                <span>Nehru Nagar, National Highway 4, Belagavi, Karnataka 590010, India</span>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3 p-3.5 bg-white rounded-xl border border-slate-200">
+              <i data-lucide="phone" class="w-5 h-5 text-slate-900 shrink-0 mt-0.5"></i>
+              <div>
+                <span class="font-bold text-slate-900 block">Direct Telephones</span>
+                <span>General Reception: +91 831 247 1000</span><br />
+                <span>Emergency 24/7: +91 831 247 3777</span>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3 p-3.5 bg-white rounded-xl border border-slate-200">
+              <i data-lucide="mail" class="w-5 h-5 text-slate-900 shrink-0 mt-0.5"></i>
+              <div>
+                <span class="font-bold text-slate-900 block">Official Inquiries</span>
+                <span>care@klehospital.org | appointments@klehospital.org</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact & Inquiry Form -->
+        <div class="lg:col-span-7">
+          <div class="glass-card rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-md">
+            <h3 class="text-lg font-bold text-slate-900 font-heading mb-1">Send a Message to Patient Care Desk</h3>
+            <p class="text-xs text-slate-500 mb-6">For general queries, international patient assistance, or feedback:</p>
+
+            <form id="hospitalContactForm" class="space-y-4 text-xs">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block font-bold text-slate-700 uppercase tracking-wider text-[10px] mb-1">Your Full Name</label>
+                  <input type="text" id="contactName" required placeholder="John Doe" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-900" />
+                </div>
+                <div>
+                  <label class="block font-bold text-slate-700 uppercase tracking-wider text-[10px] mb-1">Phone Number</label>
+                  <input type="tel" id="contactPhone" required placeholder="+91 98765 43210" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-900" />
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block font-bold text-slate-700 uppercase tracking-wider text-[10px] mb-1">Email Address</label>
+                  <input type="email" id="contactEmail" required placeholder="name@domain.com" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-900" />
+                </div>
+                <div>
+                  <label class="block font-bold text-slate-700 uppercase tracking-wider text-[10px] mb-1">Inquiry Topic</label>
+                  <select id="contactTopic" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-900">
+                    <option value="General Query">General Medical Inquiry</option>
+                    <option value="OPD Appointment">OPD Specialist Appointment</option>
+                    <option value="Health Package">Health Checkup Package</option>
+                    <option value="Cashless Insurance">Insurance Pre-Auth Inquiry</option>
+                    <option value="International Patient">International Patient Services</option>
+                    <option value="Feedback">Feedback / Compliment</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label class="block font-bold text-slate-700 uppercase tracking-wider text-[10px] mb-1">Your Message or Clinical Concern</label>
+                <textarea id="contactMessage" rows="4" required placeholder="Please describe how we can assist you..." class="w-full bg-slate-50 border border-slate-300 rounded-xl p-3 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-900"></textarea>
+              </div>
+
+              <button type="submit" class="w-full py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs shadow-md transition flex items-center justify-center gap-2">
+                <i data-lucide="send" class="w-3.5 h-3.5"></i>
+                <span>Submit Inquiry to Hospital Desk</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       15. Modern Grey & Light White Footer
+       ===================================================================== -->
+  <footer class="bg-slate-950 text-slate-400 text-xs border-t border-slate-900 pt-16 pb-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-800">
+        
+        <!-- Brand & Accreditations Column -->
+        <div class="lg:col-span-2">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-white text-slate-950 flex items-center justify-center font-heading font-extrabold text-xl shadow">
+              KLE
+            </div>
+            <div>
+              <span class="text-lg font-bold text-white font-heading">KLE Hospital</span>
+              <p class="text-[11px] text-slate-400">Multi-Specialty & Research Institute</p>
+            </div>
+          </div>
+
+          <p class="text-xs text-slate-400 leading-relaxed mb-6 max-w-sm">
+            Dedicated to delivering ethical, cutting-edge, and compassionate medical care with 1,250+ beds, robotic surgery suites, and 24/7 Level-1 trauma response.
+          </p>
+
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2.5 py-1 bg-slate-900 text-slate-300 rounded-md border border-slate-800 text-[10px] font-bold">NABH ACCREDITED</span>
+            <span class="px-2.5 py-1 bg-slate-900 text-slate-300 rounded-md border border-slate-800 text-[10px] font-bold">JCI CERTIFIED</span>
+            <span class="px-2.5 py-1 bg-slate-900 text-slate-300 rounded-md border border-slate-800 text-[10px] font-bold">NABL LAB</span>
+            <span class="px-2.5 py-1 bg-slate-900 text-slate-300 rounded-md border border-slate-800 text-[10px] font-bold">ISO 9001:2015</span>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-4">Clinical Centers</h4>
+          <ul class="space-y-2">
+            <li><a href="#departments" class="hover:text-white transition">Cardiology & Heart Care</a></li>
+            <li><a href="#departments" class="hover:text-white transition">Neurology & Neurosurgery</a></li>
+            <li><a href="#departments" class="hover:text-white transition">Oncology & Cancer Care</a></li>
+            <li><a href="#departments" class="hover:text-white transition">Robotic Joint Replacement</a></li>
+            <li><a href="#departments" class="hover:text-white transition">Pediatrics & Level-III NICU</a></li>
+            <li><a href="#departments" class="hover:text-white transition">Renal Sciences & Dialysis</a></li>
+          </ul>
+        </div>
+
+        <!-- Patient Portal Links -->
+        <div>
+          <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-4">Patient Services</h4>
+          <ul class="space-y-2">
+            <li><button onclick="openAppointmentModal()" class="hover:text-white transition text-left">Book Doctor Consultation</button></li>
+            <li><button onclick="openLabPortalModal()" class="hover:text-white transition text-left">Download Lab Reports</button></li>
+            <li><a href="#packages" class="hover:text-white transition">Health Checkup Packages</a></li>
+            <li><a href="#insurance" class="hover:text-white transition">Cashless Insurance Desk</a></li>
+            <li><a href="#facilities" class="hover:text-white transition">Robotic Surgery Centre</a></li>
+            <li><a href="#faq" class="hover:text-white transition">Visiting Hours & Hospital Rules</a></li>
+          </ul>
+        </div>
+
+        <!-- 24/7 Helplines -->
+        <div>
+          <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-4">24/7 Emergency Hub</h4>
+          <div class="space-y-3">
+            <div>
+              <span class="text-[10px] uppercase text-slate-500 font-semibold block">Trauma & ICU Hotline</span>
+              <a href="tel:+918312473777" class="text-sm font-bold text-rose-400 font-mono hover:underline">+91 831 247 3777</a>
+            </div>
+            <div>
+              <span class="text-[10px] uppercase text-slate-500 font-semibold block">Ambulance Rapid SOS</span>
+              <a href="tel:+918312479999" class="text-sm font-bold text-white font-mono hover:underline">+91 831 247 9999</a>
+            </div>
+            <div>
+              <span class="text-[10px] uppercase text-slate-500 font-semibold block">OPD Central Booking</span>
+              <a href="tel:+918312471000" class="text-sm font-bold text-slate-300 font-mono hover:underline">+91 831 247 1000</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Copyright Bottom Bar -->
+      <div class="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px] text-slate-500">
+        <div>
+          &copy; 2026 KLE Hospital & Research Institute. All rights reserved.
+        </div>
+        <div class="flex items-center gap-4">
+          <a href="#" class="hover:text-slate-300 transition">Privacy Policy</a>
+          <span>•</span>
+          <a href="#" class="hover:text-slate-300 transition">Terms of Clinical Service</a>
+          <span>•</span>
+          <a href="#" class="hover:text-slate-300 transition">Patient Rights & Responsibilities</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- =====================================================================
+       16. Sticky Floating Emergency & Action Hub
+       ===================================================================== -->
+  <div class="floating-hub flex flex-col gap-2 items-end">
+    <button onclick="openEmergencyModal()" class="w-12 h-12 rounded-full bg-rose-600 hover:bg-rose-500 text-white shadow-xl flex items-center justify-center transition-transform hover:scale-110 emergency-glow" title="Emergency 24/7 Hotline">
+      <i data-lucide="phone-call" class="w-5 h-5"></i>
+    </button>
+    <button onclick="openAppointmentModal()" class="px-4 py-2.5 rounded-full bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold shadow-xl border border-slate-700 flex items-center gap-2 transition-transform hover:scale-105" title="Quick Appointment">
+      <i data-lucide="calendar" class="w-4 h-4"></i>
+      <span>Book Visit</span>
+    </button>
+  </div>
+
+  <!-- =====================================================================
+       17. Interactive Appointment Booking Wizard Modal
+       ===================================================================== -->
+  <div id="appointmentModal" class="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-sm hidden items-center justify-center p-4 overflow-y-auto">
+    <div class="glass-card rounded-3xl w-full max-w-2xl bg-white shadow-2xl overflow-hidden border border-slate-200">
+      
+      <!-- Modal Header -->
+      <div class="px-6 py-4 bg-slate-900 text-white flex justify-between items-center">
+        <div>
+          <span class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">KLE Hospital Digital OPD</span>
+          <h3 class="text-lg font-bold font-heading">Book an Appointment</h3>
+        </div>
+        <button onclick="closeAppointmentModal()" class="p-1 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Step Indicators -->
+      <div class="px-6 py-4 bg-slate-50 border-b border-slate-200 flex items-center justify-center gap-3">
+        <div class="flex items-center gap-2">
+          <div id="stepIndicator1" class="w-8 h-8 rounded-full bg-slate-900 text-white font-bold text-xs flex items-center justify-center ring-4 ring-slate-200">1</div>
+          <span class="text-xs font-semibold text-slate-800 hidden sm:inline">Specialty & Doctor</span>
+        </div>
+        <div id="stepLine1" class="h-0.5 w-8 sm:w-12 bg-slate-300"></div>
+
+        <div class="flex items-center gap-2">
+          <div id="stepIndicator2" class="w-8 h-8 rounded-full bg-slate-100 text-slate-500 font-bold text-xs border border-slate-300 flex items-center justify-center">2</div>
+          <span class="text-xs font-semibold text-slate-500 hidden sm:inline">Slot & Mode</span>
+        </div>
+        <div id="stepLine2" class="h-0.5 w-8 sm:w-12 bg-slate-300"></div>
+
+        <div class="flex items-center gap-2">
+          <div id="stepIndicator3" class="w-8 h-8 rounded-full bg-slate-100 text-slate-500 font-bold text-xs border border-slate-300 flex items-center justify-center">3</div>
+          <span class="text-xs font-semibold text-slate-500 hidden sm:inline">Patient Info</span>
+        </div>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="p-6">
+        
+        <!-- STEP 1: Specialty & Doctor & Type -->
+        <div id="stepPane1">
+          <div class="space-y-4 text-xs">
+            <div>
+              <label class="block font-bold text-slate-700 uppercase tracking-wider text-[10px] mb-1">Select Department / Specialty *</label>
+              <select id="bookingDeptSelect" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-900">
+                <!-- Injected via app.js -->
+              </select>
+            </div>
+
+            <div>
+              <label class="block font-bold text-slate-700 uppercase tracking-wider text-[10px] mb-1">Preferred Specialist Doctor</label>
+              <select id="bookingDoctorSelect" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-900">
+                <option value="">-- Choose Department First or Any Available Specialist --</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block font-bold text-slate-700 uppercase tracking-wider text-[10px] mb-2">Consultation Mode</label>
+              <div class="grid grid-cols-2 gap-3">
+                <label class="p-3 border border-slate-300 rounded-xl cursor-pointer flex items-center gap-2.5 hover:bg-slate-50 transition">
+                  <input type="radio" name="consultType" value="in-person" checked class="text-slate-900 focus:ring-slate-900" />
+                  <div>
+                    <span class="font-bold text-slate-900 block">Hospital OPD Visit</span>
+                    <span class="text-[11px] text-slate-500">In-person clinical checkup</span>
+                  </div>
+                </label>
+                <label class="p-3 border border-slate-300 rounded-xl cursor-pointer flex items-center gap-2.5 hover:bg-slate-50 transition">
+                  <input type="radio" name="consultType" value="video" class="text-slate-900 focus:ring-slate-900" />
+                  <div>
+                    <span class="font-bold text-slate-900 block">Telehealth HD Video</span>
+                    <span class="text-[11px] text-slate-500">Secure online video session</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-slate-200 flex justify-end">
+            <button onclick="nextBookingStep()" class="px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs transition flex items-center gap-2">
+              <span>Continue to Schedule</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- STEP 2: Date & Available Time Slots -->
+        <div id="stepPane2" class="hidden">
+          <div class="space-y-4 text-xs">
+            <div>
+              <label class="block font-bold text-slate-700 uppercase tracking-wider text-[10px] mb-1">Appointment Date *</label>
+              <input type="date" id="bookingDateInput" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-900" />
+            </div>
+
+            <div>
+              <label class="block font-bold text-slate-700 uppercase tracking-wider text-[10px] mb-2">Select Convenient Time Slot *</label>
+              <div class="grid grid-cols-3 sm:grid-cols-4 gap-2">
+                <button type="button" class="time-slot-btn slot-pill py-2 px-3 rounded-lg text-xs font-semibold text-slate-700 text-center" data-time="09:30 AM">09:30 AM</button>
+                <button type="button" class="time-slot-btn slot-pill selected bg-slate-900 text-white py-2 px-3 rounded-lg text-xs font-semibold text-center" data-time="10:15 AM">10:15 AM</button>
+                <button type="button" class="time-slot-btn slot-pill py-2 px-3 rounded-lg text-xs font-semibold text-slate-700 text-center" data-time="11:00 AM">11:00 AM</button>
+                <button type="button" class="time-slot-btn slot-pill py-2 px-3 rounded-lg text-xs font-semibold text-slate-700 text-center" data-time="11:45 AM">11:45 AM</button>
+                <button type="button" class="time-slot-btn slot-pill py-2 px-3 rounded-lg text-xs font-semibold text-slate-700 text-center" data-time="02:00 PM">02:00 PM</button>
+                <button type="button" class="time-slot-btn slot-pill py-2 px-3 rounded-lg text-xs font-semibold text-slate-700 text-center" data-time="03:15 PM">03:15 PM</button>
+                <button type="button" class="time-slot-btn slot-pill py-2 px-3 rounded-lg text-xs font-semibold text-slate-700 text-center" data-time="04:30 PM">04:30 PM</button>
+                <button type="button" class="time-slot-btn slot-pill py-2 px-3 rounded-lg text-xs font-semibold text-slate-700 text-center" data-time="06:00 PM">06:00 PM</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-slate-200 flex justify-between">
+            <button onclick="goToBookingStep(1)" class="px-4 py-2.5 rounded-xl border border-slate-300 text-slate-700 hover:bg-slate-100 font-semibold text-xs transition">
+              Back
+            </button>
+            <button onclick="nextBookingStep()" class="px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs transition flex items-center gap-2">
+              <span>Continue to Patient Details</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- STEP 3: Patient Information -->
+        <div id="stepPane3" class="hidden">
+          <div class="space-y-4 text-xs">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div>
+                <label class="block font-bold text-slate-700 uppercase tracking-wider text-[10px] mb-1">Patient Full Name *</label>
+                <input type="text" id="patientNameInput" required placeholder="e.g. Anand K. Patil" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-900" />
+              </div>
+              <div>
+                <label class="block font-bold text-slate-700 uppercase tracking-wider text-[10px] mb-1">Mobile Contact *</label>
+                <input type="tel" id="patientPhoneInput" required placeholder="+91 98765 43210" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-900" />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3">
+              <div>
+                <label class="block font-bold text-slate-700 uppercase tracking-wider text-[10px] mb-1">Age (Years)</label>
+                <input type="number" id="patientAgeInput" placeholder="e.g. 42" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-900" />
+              </div>
+              <div>
+                <label class="block font-bold text-slate-700 uppercase tracking-wider text-[10px] mb-1">Gender</label>
+                <select id="patientGenderSelect" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-900">
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label class="block font-bold text-slate-700 uppercase tracking-wider text-[10px] mb-1">Symptoms or Medical History Notes</label>
+              <textarea id="patientNotes" rows="2" placeholder="Brief note about chest pain, joint stiffness, consultation history, or health package..." class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-900"></textarea>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-slate-200 flex justify-between">
+            <button onclick="goToBookingStep(2)" class="px-4 py-2.5 rounded-xl border border-slate-300 text-slate-700 hover:bg-slate-100 font-semibold text-xs transition">
+              Back
+            </button>
+            <button onclick="nextBookingStep()" class="px-6 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs shadow-md transition flex items-center gap-2">
+              <i data-lucide="check-circle" class="w-4 h-4"></i>
+              <span>Confirm & Generate Token</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- STEP 4: Success Confirmation Slip -->
+        <div id="stepPaneSuccess" class="hidden text-center py-4">
+          <div class="w-14 h-14 rounded-full bg-emerald-100 text-emerald-700 mx-auto flex items-center justify-center mb-3">
+            <i data-lucide="check-check" class="w-8 h-8"></i>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 font-heading mb-1">Appointment Confirmed!</h3>
+          <p class="text-xs text-slate-500 mb-6">Your outpatient consultation has been registered in the KLE Hospital Hospital Information System (HIS).</p>
+
+          <div id="bookingSuccessDetails">
+            <!-- Injected via JavaScript -->
+          </div>
+
+          <div class="flex justify-center gap-3">
+            <button onclick="printAppointmentSlip()" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-xl text-xs font-semibold transition flex items-center gap-1.5">
+              <i data-lucide="printer" class="w-3.5 h-3.5"></i>
+              <span>Print Token Slip</span>
+            </button>
+            <button onclick="closeAppointmentModal()" class="px-5 py-2 bg-slate-900 hover:bg-slate-800 text-white rounded-xl text-xs font-semibold transition">
+              Done
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       18. Doctor Profile Detail Modal
+       ===================================================================== -->
+  <div id="doctorProfileModal" class="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-sm hidden items-center justify-center p-4 overflow-y-auto">
+    <div class="glass-card rounded-3xl w-full max-w-3xl bg-white shadow-2xl overflow-hidden border border-slate-200 p-6 sm:p-8">
+      <div id="doctorModalBody">
+        <!-- Rendered via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       19. Diagnostic Lab Reports Modal
+       ===================================================================== -->
+  <div id="labReportsModal" class="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-sm hidden items-center justify-center p-4 overflow-y-auto">
+    <div class="glass-card rounded-3xl w-full max-w-3xl bg-white shadow-2xl overflow-hidden border border-slate-200 p-6 sm:p-8">
+      <div class="flex justify-between items-center pb-4 border-b border-slate-200 mb-6">
+        <div>
+          <span class="text-[10px] uppercase font-bold text-slate-400">Digital Pathology & Molecular Labs</span>
+          <h3 class="text-xl font-bold text-slate-900 font-heading">Diagnostic Report Viewer</h3>
+        </div>
+        <button onclick="closeLabPortalModal()" class="p-1 rounded-lg text-slate-400 hover:text-slate-700">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-3 mb-6">
+        <input type="text" id="modalPatientIdInput" placeholder="Enter Patient ID (e.g. KLE-1001)" class="flex-1 bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs font-mono font-bold uppercase text-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-900" />
+        <button onclick="const q = document.getElementById('modalPatientIdInput').value; lookupReport(q);" class="px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs transition">
+          Lookup Result
+        </button>
+      </div>
+
+      <div class="flex flex-wrap gap-2 mb-6 text-xs">
+        <span class="text-slate-400 self-center text-[11px]">Quick Samples:</span>
+        <button onclick="lookupReport('KLE-1001'); document.getElementById('modalPatientIdInput').value='KLE-1001';" class="px-2.5 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded text-xs font-mono font-semibold">KLE-1001</button>
+        <button onclick="lookupReport('KLE-1002'); document.getElementById('modalPatientIdInput').value='KLE-1002';" class="px-2.5 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded text-xs font-mono font-semibold">KLE-1002</button>
+        <button onclick="lookupReport('KLE-1003'); document.getElementById('modalPatientIdInput').value='KLE-1003';" class="px-2.5 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded text-xs font-mono font-semibold">KLE-1003</button>
+      </div>
+
+      <div id="modalReportContainer">
+        <!-- Reuses the labReportResultContainer logic or scrolls -->
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       20. Emergency SOS Modal
+       ===================================================================== -->
+  <div id="emergencySosModal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-white rounded-3xl w-full max-w-lg shadow-2xl overflow-hidden border-2 border-rose-500 p-6 sm:p-8">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-12 h-12 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center shrink-0">
+          <i data-lucide="siren" class="w-6 h-6"></i>
+        </div>
+        <div>
+          <span class="text-[10px] uppercase font-bold text-rose-600 tracking-wider">Critical Response Protocol</span>
+          <h3 class="text-xl font-extrabold text-slate-900 font-heading">KLE Hospital 24/7 Trauma Desk</h3>
+        </div>
+      </div>
+
+      <p class="text-xs text-slate-600 mb-6 leading-relaxed">
+        You are connecting to our central trauma coordination desk. Our team will initiate direct communication with the on-duty emergency physician and dispatch the nearest Mobile ICU ambulance with GPS priority.
+      </p>
+
+      <div class="space-y-3 mb-6">
+        <a href="tel:+918312473777" class="p-4 bg-rose-600 hover:bg-rose-700 text-white rounded-2xl flex items-center justify-between transition shadow-md">
+          <div class="flex items-center gap-3">
+            <i data-lucide="phone-call" class="w-5 h-5"></i>
+            <div>
+              <span class="text-[10px] uppercase font-bold text-rose-200 block">Level-1 Trauma & ER</span>
+              <span class="text-lg font-bold font-mono">+91 831 247 3777</span>
+            </div>
+          </div>
+          <span class="text-xs font-bold uppercase tracking-wider bg-rose-800 px-3 py-1 rounded-lg">Call Now</span>
+        </a>
+
+        <a href="tel:+918312479999" class="p-4 bg-slate-900 hover:bg-slate-800 text-white rounded-2xl flex items-center justify-between transition border border-slate-700">
+          <div class="flex items-center gap-3">
+            <i data-lucide="ambulance" class="w-5 h-5 text-slate-300"></i>
+            <div>
+              <span class="text-[10px] uppercase font-bold text-slate-400 block">Ambulance Fleet Dispatch</span>
+              <span class="text-lg font-bold font-mono">+91 831 247 9999</span>
+            </div>
+          </div>
+          <span class="text-xs font-bold uppercase tracking-wider bg-slate-800 px-3 py-1 rounded-lg">Call Now</span>
+        </a>
+      </div>
+
+      <div class="text-center">
+        <button onclick="closeEmergencyModal()" class="text-xs font-semibold text-slate-500 hover:text-slate-800">
+          Cancel & Return to Website
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       21. Floating Notification Toast Container
+       ===================================================================== -->
+  <div id="toastContainer"></div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    // Initialize Lucide icons on window load
+    window.addEventListener('load', () => {
+      if (window.lucide) {
+        window.lucide.createIcons();
+      }
+    });
+  </script>
+</body>
+</html>
